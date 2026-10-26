@@ -27,6 +27,11 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Patch gesture-handler for Gradle 8.3
+      run: |
+        chmod +x patch-gesture-handler.sh
+        ./patch-gesture-handler.sh
+
     - name: Grant execute permission for gradlew
       run: chmod +x android/gradlew
 
