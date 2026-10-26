@@ -1,0 +1,165 @@
+╔═══════════════════════════════════════════════════════════╗
+║     INSTALL 3 SOFTWARE INI DI LAPTOP TEMAN               ║
+╚═══════════════════════════════════════════════════════════╝
+
+Total Download: ~4-5 GB
+Total Waktu: ~40-60 menit (dengan internet cepat)
+
+═══════════════════════════════════════════════════════════
+
+1️⃣  NODE.JS (v18 atau v20)
+═══════════════════════════════════════════════════════════
+
+📥 Download: https://nodejs.org/
+📦 Ukuran: ~30 MB
+⏱️ Waktu: 5 menit
+
+Windows: Download file .msi → Install
+Mac: Download file .pkg → Install
+Linux: sudo apt install nodejs npm
+
+✅ Test: Buka terminal baru, ketik:
+   node --version
+   npm --version
+
+───────────────────────────────────────────────────────────
+
+2️⃣  JAVA JDK 17
+═══════════════════════════════════════════════════════════
+
+📥 Download: https://adoptium.net/temurin/releases/
+📦 Ukuran: ~180 MB
+⏱️ Waktu: 5 menit
+
+⚠️ PENTING: Pilih Version 17 (LTS), bukan 8 atau 21!
+
+Windows: 
+  - Download .msi untuk Windows x64
+  - Install, centang "Set JAVA_HOME" & "Add to PATH"
+
+Mac: Download .pkg → Install
+Linux: sudo apt install openjdk-17-jdk
+
+✅ Test: Buka terminal baru, ketik:
+   java -version
+   (harus muncul "17.x.x")
+
+───────────────────────────────────────────────────────────
+
+3️⃣  ANDROID STUDIO
+═══════════════════════════════════════════════════════════
+
+📥 Download: https://developer.android.com/studio
+📦 Ukuran: ~1 GB installer + 3GB SDK
+⏱️ Waktu: 30-45 menit
+
+Install:
+  1. Download Android Studio
+  2. Install, centang SEMUA components
+  3. Ikuti Setup Wizard
+  4. Pilih "Standard Installation"
+  5. Accept semua licenses
+  6. Tunggu download SDK selesai (~3GB)
+
+Setup ANDROID_HOME (Windows):
+  1. Klik Start → cari "Environment Variables"
+  2. Klik "Environment Variables" button
+  3. System Variables → New:
+     - Name: ANDROID_HOME
+     - Value: C:\Users\[USERNAME]\AppData\Local\Android\Sdk
+  4. Edit "Path", tambahkan:
+     - %ANDROID_HOME%\platform-tools
+     - %ANDROID_HOME%\cmdline-tools\latest\bin
+  5. OK → OK → RESTART TERMINAL
+
+Setup ANDROID_HOME (Mac/Linux):
+  Tambahkan ke ~/.bashrc atau ~/.zshrc:
+  
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+  export PATH=$PATH:$ANDROID_HOME/platform-tools
+  
+  Lalu: source ~/.bashrc
+
+✅ Test: Buka terminal baru, ketik:
+   echo %ANDROID_HOME%     (Windows)
+   echo $ANDROID_HOME      (Mac/Linux)
+   adb --version
+
+═══════════════════════════════════════════════════════════
+
+✅ CHECKLIST - PASTIKAN SEMUA OK:
+═══════════════════════════════════════════════════════════
+
+Buka Terminal/Command Prompt BARU, test:
+
+  ☐ node --version       → v18.x.x atau v20.x.x
+  ☐ npm --version        → 9.x.x atau 10.x.x
+  ☐ java -version        → openjdk version "17.x.x"
+  ☐ echo $ANDROID_HOME   → (path ke Android SDK)
+  ☐ adb --version        → Android Debug Bridge version x.x.x
+
+Jika SEMUA OK → SIAP BUILD! 🚀
+
+═══════════════════════════════════════════════════════════
+
+🚀 CARA BUILD SETELAH INSTALL:
+═══════════════════════════════════════════════════════════
+
+cd TikTokFYPHelper
+cd android
+gradlew assembleDebug
+
+(Mac/Linux: ./gradlew assembleDebug)
+
+Tunggu 10-20 menit.
+
+APK ada di:
+android/app/build/outputs/apk/debug/app-debug.apk
+
+═══════════════════════════════════════════════════════════
+
+🆘 TROUBLESHOOTING:
+═══════════════════════════════════════════════════════════
+
+❌ "node tidak dikenali"
+   → Restart terminal atau komputer
+   → Install ulang Node.js
+
+❌ "java tidak dikenali"
+   → Set JAVA_HOME manual (lihat di atas)
+   → Pastikan Java 17
+
+❌ "ANDROID_HOME not set"
+   → Set manual (lihat di atas)
+   → Restart terminal
+
+❌ Build error "SDK not found"
+   → Buka Android Studio
+   → Tools → SDK Manager
+   → Install Android SDK 34
+
+═══════════════════════════════════════════════════════════
+
+💡 TIPS:
+═══════════════════════════════════════════════════════════
+
+✓ Gunakan internet stabil (download besar)
+✓ Laptop sambil di-charge (proses lama)
+✓ Restart terminal setelah install
+✓ Restart komputer jika ada masalah
+✓ Tutup antivirus sementara saat install
+
+═══════════════════════════════════════════════════════════
+
+📚 DOKUMENTASI LENGKAP:
+═══════════════════════════════════════════════════════════
+
+Baca file ini untuk panduan lebih detail:
+- TRANSFER_DAN_BUILD.md
+- CHECKLIST_UNTUK_TEMAN.md
+
+═══════════════════════════════════════════════════════════
+
+Good luck! 🎉
+
+═══════════════════════════════════════════════════════════
